@@ -1,0 +1,72 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Perfil e preferências do utilizador da plataforma Trade AI",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "ID exclusivo de autenticação do Firebase",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "description": "Nome completo ou de exibição do utilizador",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Endereço de email do utilizador",
+          "maxLength": 120
+        },
+        "avatar": {
+          "type": "string",
+          "description": "URL da foto de perfil ou avatar",
+          "maxLength": 500
+        },
+        "plan": {
+          "type": "string",
+          "description": "Nível do plano de trading (ex: VIP Trader Pro, Free)",
+          "maxLength": 50
+        },
+        "notificationsEnabled": {
+          "type": "boolean",
+          "description": "Preferencia para receber notificações de novos sinais de Forex"
+        },
+        "riskAlertsEnabled": {
+          "type": "boolean",
+          "description": "Preferencia para receber alertas de proximidade ao Stop Loss"
+        },
+        "soundEnabled": {
+          "type": "boolean",
+          "description": "Preferencia para efeitos sonoros de novos sinais"
+        },
+        "autoRefresh": {
+          "type": "boolean",
+          "description": "Preferencia para atualização contínua de cotações de mercado"
+        },
+        "preferredPairs": {
+          "type": "array",
+          "description": "Lista de pares Forex favoritos para monitoramento"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Data ISO de criação do perfil"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Data ISO da última atualização"
+        }
+      },
+      "required": ["uid", "email", "name"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Armazena as configurações e o perfil do utilizador indexado pelo seu UID"
+    }
+  }
+}

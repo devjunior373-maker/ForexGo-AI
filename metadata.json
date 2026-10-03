@@ -1,0 +1,8 @@
+{
+  "name": "Trade AI - Análise de Mercado Forex",
+  "description": "Aplicativo Mobile-First PWA de análise e sinais preditivos do mercado Forex com indicadores técnicos e gráficos interativos em tempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
